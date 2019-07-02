@@ -80,8 +80,6 @@ class Client
             $uri .= '?' . http_build_query($request->getParameters());
         }
 
-        echo $uri;
-
         $result = $this->httpClient->request($request->getMethod(), $uri, $this->getOptionsFromRequest($request));
 
         $request->handleResponse($result);

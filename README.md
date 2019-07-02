@@ -30,53 +30,26 @@ $uri = ''; // Mattermost uri incl. port (f.e. https://mattermost.acme.com:443)
 $client = new Client($session, $uri);
 ```
 
-### Teams
-##### List teams
-```php
-use Fiyo\Mattermost\Request\Team\GetTeamRequest;
+### Examples
+You can find examples for every single API request in [examples](./examples)
 
-$request = new GetTeamRequest();
-$teams = $client->request($request);
-```
+##### Teams
+* [Get all teams](./examples/Team/GetTeams.php)
 
-### Channels
-Get all channels in a team
-```php
-use Fiyo\Mattermost\Request\Channel\GetChannelsRequest;
 
-$team = ''; // TeamId from GetTeamRequest();
+##### Users
+* [Get all users](./examples/User/GetUsers.php)
 
-$request = new GetChannelsRequest();
-$channels = $client->rquest($request);
-```
 
-Get a channel by name
-```php
-use Fiyo\Mattermost\Request\Channel\GetChannelByNameRequest;
+##### Channels
+* [Create channel](./examples/Channel/CreateChannel.php)
+* [Get all public channels](./examples/Channel/GetPublicChannels.php)
+* [Get channel by name](./examples/Channel/GetChannelByName.php)
 
-$teamId = ''; // Team id, can ge requested by GetTeamRequest
-$name = ''; // Name of the channel, f.e. hub
-$request = new GetChannelByNameRequest($teamId, $name);
-$channel = $client->request($request);
-```
 
-### Posts
-Create a new post
-```php
-use Fiyo\Mattermost\Entity\Post;
-use Fiyo\Mattermost\Request\Post\CreatePostRequest;
-
-$channelId = ''; // ChannelId can be requested from GetChannelByNameRequest() or GetChannelsRequest()
-$message = ''; // The actual message you want to send
-
-$post = new Post();
-$post->setChannelId($channelId); 
-$post->setMessage($message);
-$post->setPinned($pinned); // Boolean, optional (Whether the post should be pinned or not)
-$post->setRootId($rootId); // String, optional (The post ID to comment on)
-$post->addFileId($fileId); // String, optional (File ID associated with the post, function can be called at a maximum of five)
-$post->setProps($props); // stdClass (json),optional (A general JSON property bag to attach to the post)
-
-$request = new CreatePostRequest($post);
-$post = $client->request($request);
-```
+##### Posts
+* [Create post](./examples/Post/CreatePost.php)
+* [Create ephemeral post](./examples/Post/CreateEphermeralPost.php)
+* [Update post](./examples/Post/UpdatePost.php)
+* [Delete post](./examples/Post/DeletePost.php)
+* [Get post by id](./examples/Post/GetPost.php)

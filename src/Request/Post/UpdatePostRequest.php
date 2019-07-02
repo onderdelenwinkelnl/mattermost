@@ -6,71 +6,51 @@ use Fiyo\Mattermost\Entity\Post;
 use Fiyo\Mattermost\Factory\Entity\PostFactory;
 use Fiyo\Mattermost\Factory\EntityFactory;
 use Fiyo\Mattermost\Factory\ValidatorFactory;
-use Fiyo\Mattermost\Request\AbstractAuthorisedPostRequest;
-use Fiyo\Mattermost\Validator\Post\CreatePostValidator;
+use Fiyo\Mattermost\Request\AbstractAuthorisedPutRequest;
+use Fiyo\Mattermost\Validator\Post\PostIdValidator;
 use GuzzleHttp\Psr7\Response;
 
 /**
- * Class AbstractCreatePostRequest
+ * Class UpdatePostRequest
  * @package Fiyo\Mattermost\Request\Post
  */
-abstract class AbstractCreatePostRequest extends AbstractAuthorisedPostRequest
+class UpdatePostRequest extends AbstractAuthorisedPutRequest
 {
+    const ENDPOINT = '/posts/%s';
+
+    const FIELD_ID         = 'id';
     const FIELD_CHANNEL_ID = 'channel_id';
     const FIELD_MESSAGE    = 'message';
-    const FIELD_ROOT_ID    = 'root_id';
     const FIELD_FILE_IDS   = 'file_ids';
     const FIELD_PROPS      = 'props';
 
-     /**
-      * @var Post
+    /**
+     * @var Post
      */
     protected $post;
 
     /**
-     * AbstractCreatePostRequest constructor.
+     * UpdatePostRequest constructor.
      * @param Post $post
      * @throws \Fiyo\Mattermost\Exception\InvalidValidatorFactoryException
      */
     public function __construct(Post $post)
     {
         $this->post = $post;
-        $this->validate();
-    }
-
-    /**
-     * @throws \Fiyo\Mattermost\Exception\InvalidValidatorFactoryException
-     */
-    protected function validate()
-    {
-        $validator = ValidatorFactory::create(CreatePostValidator::class, $this->post);
-        $validator->validate();
-    }
-
-    /**
-     * @param Response $response
-     * @throws \Fiyo\Mattermost\Exception\InvalidEntityFactoryException
-     * @throws \Fiyo\Mattermost\Exception\UnexpectedBodyException
-     */
-    public function handleResponse(Response $response)
-    {
-        $this->output = EntityFactory::create($response, PostFactory::class);
-        $this->post = $this->output;
+        ValidatorFactory::create(PostIdValidator::class, $this->post)->validate();
     }
 
     /**
      * @return array
      */
-    protected function getPostContent()
+    public function getContent(): array
     {
         $content = [
+            self::FIELD_ID => $this->post->getId(),
             self::FIELD_CHANNEL_ID => $this->post->getChannelId(),
             self::FIELD_MESSAGE => $this->post->getMessage(),
         ];
 
-        if (!empty($this->post->getRootId())) {
-            $content[self::FIELD_ROOT_ID] = $this->post->getRootId();
-        }
 
         if (!empty($this->post->getFileIds())) {
             $content[self::FIELD_FILE_IDS] = $this->post->getFileIds();
@@ -81,5 +61,23 @@ abstract class AbstractCreatePostRequest extends AbstractAuthorisedPostRequest
         }
 
         return $content;
+    }
+
+    /**
+     * @param Response $response
+     * @throws \Fiyo\Mattermost\Exception\InvalidEntityFactoryException
+     * @throws \Fiyo\Mattermost\Exception\UnexpectedBodyException
+     */
+    public function handleResponse(Response $response)
+    {
+        $this->output = EntityFactory::create($response, PostFactory::class);
+    }
+
+    /**
+     * @return string
+     */
+    public function getEndpoint(): string
+    {
+        return sprintf(self::ENDPOINT, $this->post->getId());
     }
 }

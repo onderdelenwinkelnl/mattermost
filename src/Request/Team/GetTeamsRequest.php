@@ -8,10 +8,10 @@ use Fiyo\Mattermost\Request\AbstractAuthorisedPagedGetRequest;
 use GuzzleHttp\Psr7\Response;
 
 /**
- * Class GetTeamRequest
+ * Class GetTeamsRequest
  * @package Fiyo\Mattermost\Request\Team
  */
-class GetTeamRequest extends AbstractAuthorisedPagedGetRequest
+class GetTeamsRequest extends AbstractAuthorisedPagedGetRequest
 {
     const ENDPOINT = '/teams';
 

@@ -2,6 +2,8 @@
 
 namespace Fiyo\Mattermost\Request\User;
 
+use Fiyo\Mattermost\Factory\Entity\UserFactory;
+use Fiyo\Mattermost\Factory\EntityFactory;
 use Fiyo\Mattermost\Request\AbstractAuthorisedPagedGetRequest;
 use GuzzleHttp\Psr7\Response;
 
@@ -101,9 +103,14 @@ class GetUsersRequest extends AbstractAuthorisedPagedGetRequest
         return self::ENDPOINT;
     }
 
+    /**
+     * @param Response $response
+     * @throws \Fiyo\Mattermost\Exception\InvalidEntityFactoryException
+     * @throws \Fiyo\Mattermost\Exception\UnexpectedBodyException
+     */
     public function handleResponse(Response $response)
     {
-        echo $response->getBody();
+        $this->output = EntityFactory::create($response, UserFactory::class);
     }
 
     /**

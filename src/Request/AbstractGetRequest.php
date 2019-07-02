@@ -16,4 +16,12 @@ abstract class AbstractGetRequest extends AbstractRequest implements GetRequestI
     {
         return self::METHOD_GET;
     }
+
+    /**
+     * @return array
+     */
+    public function getParameters(): array
+    {
+        return [];
+    }
 }

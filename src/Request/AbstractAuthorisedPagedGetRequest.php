@@ -55,7 +55,7 @@ abstract class AbstractAuthorisedPagedGetRequest extends AbstractAuthorisedGetRe
     {
         $parameters = [
             self::PARAMETER_PAGE => $this->page,
-            self::LIMIT_DEFAULT => $this->limit,
+            self::PARAMETER_LIMIT => $this->limit,
         ];
 
         return array_merge($parameters, $this->getOptionalParameters());

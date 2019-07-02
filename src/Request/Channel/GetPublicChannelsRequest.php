@@ -4,14 +4,14 @@ namespace Fiyo\Mattermost\Request\Channel;
 
 use Fiyo\Mattermost\Factory\Entity\ChannelFactory;
 use Fiyo\Mattermost\Factory\EntityFactory;
-use Fiyo\Mattermost\Request\AbstractAuthorisedGetRequest;
+use Fiyo\Mattermost\Request\AbstractAuthorisedPagedGetRequest;
 use GuzzleHttp\Psr7\Response;
 
 /**
- * Class GetChannelsRequest
+ * Class GetPublicChannelsRequest
  * @package Fiyo\Mattermost\Request\Channel
  */
-class GetChannelsRequest extends AbstractAuthorisedGetRequest
+class GetPublicChannelsRequest extends AbstractAuthorisedPagedGetRequest
 {
     const ENDPOINT = '/teams/%s/channels';
 
@@ -21,7 +21,7 @@ class GetChannelsRequest extends AbstractAuthorisedGetRequest
     protected $teamId;
 
     /**
-     * GetChannelsRequest constructor.
+     * GetPublicChannelsRequest constructor.
      * @param string $teamId
      */
     public function __construct(string $teamId)

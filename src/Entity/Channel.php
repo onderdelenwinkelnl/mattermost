@@ -8,6 +8,9 @@ namespace Fiyo\Mattermost\Entity;
  */
 class Channel extends AbstractTimedEntity
 {
+    const TYPE_PUBLIC = 'O';
+    const TYPE_PRIVATE = 'P';
+
     /**
      * @var string
      */
@@ -61,7 +64,7 @@ class Channel extends AbstractTimedEntity
     /**
      * @return string
      */
-    public function getTeamId(): string
+    public function getTeamId()
     {
         return $this->teamId;
     }
@@ -77,7 +80,7 @@ class Channel extends AbstractTimedEntity
     /**
      * @return string
      */
-    public function getType(): string
+    public function getType()
     {
         return $this->type;
     }
@@ -87,13 +90,22 @@ class Channel extends AbstractTimedEntity
      */
     public function setType(string $type)
     {
+        $allowedTypes = [
+            self::TYPE_PUBLIC,
+            self::TYPE_PRIVATE,
+        ];
+
+        if (!in_array($type, $allowedTypes)) {
+            throw new \InvalidArgumentException(sprintf("Invalid type '%s' specified, only one of the following is allowed: %s", $type, implode(", ", $allowedTypes)));
+        }
+
         $this->type = $type;
     }
 
     /**
      * @return string
      */
-    public function getDisplayName(): string
+    public function getDisplayName()
     {
         return $this->displayName;
     }
@@ -109,7 +121,7 @@ class Channel extends AbstractTimedEntity
     /**
      * @return string
      */
-    public function getName(): string
+    public function getName()
     {
         return $this->name;
     }
@@ -125,7 +137,7 @@ class Channel extends AbstractTimedEntity
     /**
      * @return string
      */
-    public function getHeader(): string
+    public function getHeader()
     {
         return $this->header;
     }
@@ -141,7 +153,7 @@ class Channel extends AbstractTimedEntity
     /**
      * @return string
      */
-    public function getPurpose(): string
+    public function getPurpose()
     {
         return $this->purpose;
     }
@@ -173,7 +185,7 @@ class Channel extends AbstractTimedEntity
     /**
      * @return int
      */
-    public function getTotalMessageCount(): int
+    public function getTotalMessageCount()
     {
         return $this->totalMessageCount;
     }
@@ -205,7 +217,7 @@ class Channel extends AbstractTimedEntity
     /**
      * @return string
      */
-    public function getCreatorId(): string
+    public function getCreatorId()
     {
         return $this->creatorId;
     }
