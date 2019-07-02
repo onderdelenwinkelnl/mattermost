@@ -4,6 +4,7 @@ namespace Fiyo\Mattermost\Validator\Post;
 
 use Fiyo\Mattermost\Entity\Post;
 use Fiyo\Mattermost\Exception\MissingValueException;
+use Fiyo\Mattermost\Validator\AbstractValidator;
 
 /**
  * Class CreatePostValidator
