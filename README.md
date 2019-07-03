@@ -45,6 +45,7 @@ You can find examples for every single API request in [examples](./examples)
 ##### Channels
 * [Create channel](./examples/Channel/CreateChannel.php)
 * [Create direct message channel](./examples/Channel/CreateDirectMessageChannel.php)
+* [Create group message channel](./examples/Channel/CreateGroupMessageChannel.php)
 * [Get all public channels](./examples/Channel/GetPublicChannels.php)
 * [Get channel by name](./examples/Channel/GetChannelByName.php)
 

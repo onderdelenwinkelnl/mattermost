@@ -11,6 +11,7 @@ class Channel extends AbstractTimedEntity
     const TYPE_PUBLIC  = 'O';
     const TYPE_PRIVATE = 'P';
     const TYPE_DIRECT  = 'D';
+    const TYPE_GROUP   = 'G';
 
     /**
      * @var string
@@ -95,6 +96,7 @@ class Channel extends AbstractTimedEntity
             self::TYPE_PUBLIC,
             self::TYPE_PRIVATE,
             self::TYPE_DIRECT,
+            self::TYPE_GROUP,
         ];
 
         if (!in_array($type, $allowedTypes)) {
