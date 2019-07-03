@@ -39,10 +39,12 @@ You can find examples for every single API request in [examples](./examples)
 
 ##### Users
 * [Get all users](./examples/User/GetUsers.php)
+* [Get users by username](./examples/User/GetUsersByUsername.php)
 
 
 ##### Channels
 * [Create channel](./examples/Channel/CreateChannel.php)
+* [Create direct message channel](./examples/Channel/CreateDirectMessageChannel.php)
 * [Get all public channels](./examples/Channel/GetPublicChannels.php)
 * [Get channel by name](./examples/Channel/GetChannelByName.php)
 

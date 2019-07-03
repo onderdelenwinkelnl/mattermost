@@ -8,8 +8,9 @@ namespace Fiyo\Mattermost\Entity;
  */
 class Channel extends AbstractTimedEntity
 {
-    const TYPE_PUBLIC = 'O';
+    const TYPE_PUBLIC  = 'O';
     const TYPE_PRIVATE = 'P';
+    const TYPE_DIRECT  = 'D';
 
     /**
      * @var string
@@ -93,6 +94,7 @@ class Channel extends AbstractTimedEntity
         $allowedTypes = [
             self::TYPE_PUBLIC,
             self::TYPE_PRIVATE,
+            self::TYPE_DIRECT,
         ];
 
         if (!in_array($type, $allowedTypes)) {
