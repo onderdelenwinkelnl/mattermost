@@ -53,6 +53,7 @@ You can find examples for every single API request in [examples](./examples)
 * [Get channel by id](./examples/Channel/GetChannelById.php)
 * [Update channel](./examples/Channel/UpdateChannel.php)
 * [Delete channel](./examples/Channel/DeleteChannel.php)
+* [Patch channel](./examples/Channel/PatchChannel.php)
 
 
 ##### Posts
