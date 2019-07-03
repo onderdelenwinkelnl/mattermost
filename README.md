@@ -55,6 +55,7 @@ You can find examples for every single API request in [examples](./examples)
 * [Delete channel](./examples/Channel/DeleteChannel.php)
 * [Patch channel](./examples/Channel/PatchChannel.php)
 * [Convert a public channel to private](./examples/Channel/ConvertPublicToPrivateChannel.php)
+* [Restore a channel](./examples/Channel/RestoreChannel.php)
 
 
 ##### Posts
