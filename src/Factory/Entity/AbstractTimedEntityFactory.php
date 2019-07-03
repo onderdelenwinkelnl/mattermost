@@ -2,7 +2,6 @@
 
 namespace Fiyo\Mattermost\Factory\Entity;
 
-use Fiyo\Mattermost\Entity\AbstractTimedEntity;
 use Fiyo\Mattermost\Entity\TimedEntityInterface;
 
 /**
@@ -22,7 +21,7 @@ abstract class AbstractTimedEntityFactory implements FactoryEntityInterface
      */
     abstract protected function preBuild(\stdClass $content): TimedEntityInterface;
 
-    public function build(\stdClass $content)
+    final public function build(\stdClass $content)
     {
         $entity = $this->preBuild($content);
 
