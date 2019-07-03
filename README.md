@@ -51,6 +51,7 @@ You can find examples for every single API request in [examples](./examples)
 * [Search group channels](./examples/Channel/SerachGroupChannel.php) _requires Mattermost server version 5.14_
 * [Get channel timezones](./examples/Channel/GetChannelTimezones.php) _requires Mattermost server version 5.6_
 * [Get channel by id](./examples/Channel/GetChannelById.php)
+* [Update channel](./examples/Channel/UpdateChannel.php)
 
 
 ##### Posts
