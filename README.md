@@ -52,6 +52,7 @@ You can find examples for every single API request in [examples](./examples)
 * [Get channel timezones](./examples/Channel/GetChannelTimezones.php) _requires Mattermost server version 5.6_
 * [Get channel by id](./examples/Channel/GetChannelById.php)
 * [Update channel](./examples/Channel/UpdateChannel.php)
+* [Delete channel](./examples/Channel/DeleteChannel.php)
 
 
 ##### Posts
