@@ -62,6 +62,7 @@ You can find examples for every single API request in [examples](./examples)
 * [Autocomplete public channels by searchterm](./examples/Channel/AutocompleteChannels.php) _requires minimum Mattermost server version 4.7_
 * [Autocomplete your channels by searchterm](./examples/Channel/AutocompleteChannelsForSearch.php) _requires minimum Mattermost server version 5.4_
 * [Search public channels](./examples/Channel/SearchChannels.php)
+* [Get channel by team -and channel name](./examples/Channel/GetChannelByTeamAndName.php)
 
 
 ##### Posts
