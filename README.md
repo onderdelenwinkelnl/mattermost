@@ -58,6 +58,7 @@ You can find examples for every single API request in [examples](./examples)
 * [Restore a channel](./examples/Channel/RestoreChannel.php)
 * [Get channel statistics](./examples/Channel/GetChannelStatistics.php)
 * [Get pinned posts from a channel](./examples/Channel/GetChannelsPinnedPosts.php)
+* [Get deleted channels](./examples/Channel/GetDeletedChannels.php)
 
 
 ##### Posts
