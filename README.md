@@ -48,14 +48,20 @@ You can find examples for every single API request in [examples](./examples)
 * [Create group message channel](./examples/Channel/CreateGroupMessageChannel.php)
 * [Get all public channels](./examples/Channel/GetPublicChannels.php)
 * [Get channel by name](./examples/Channel/GetChannelByName.php)
-* [Search group channels](./examples/Channel/SerachGroupChannel.php) _requires Mattermost server version 5.14_
-* [Get channel timezones](./examples/Channel/GetChannelTimezones.php) _requires Mattermost server version 5.6_
+* [Search group channels](./examples/Channel/SerachGroupChannel.php) _requires minimum Mattermost server version 5.14_
+* [Get channel timezones](./examples/Channel/GetChannelTimezones.php) _requires minimum Mattermost server version 5.6_
 * [Get channel by id](./examples/Channel/GetChannelById.php)
 * [Update channel](./examples/Channel/UpdateChannel.php)
 * [Delete channel](./examples/Channel/DeleteChannel.php)
 * [Patch channel](./examples/Channel/PatchChannel.php)
 * [Convert a public channel to private](./examples/Channel/ConvertPublicToPrivateChannel.php)
 * [Restore a channel](./examples/Channel/RestoreChannel.php)
+* [Get channel statistics](./examples/Channel/GetChannelStatistics.php)
+* [Get pinned posts from a channel](./examples/Channel/GetChannelsPinnedPosts.php)
+* [Get deleted channels](./examples/Channel/GetDeletedChannels.php)
+* [Autocomplete public channels by searchterm](./examples/Channel/AutocompleteChannels.php) _requires minimum Mattermost server version 4.7_
+* [Autocomplete your channels by searchterm](./examples/Channel/AutocompleteChannelsForSearch.php) _requires minimum Mattermost server version 5.4_
+* [Search public channels](./examples/Channel/SearchChannels.php)
 
 
 ##### Posts

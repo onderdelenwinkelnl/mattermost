@@ -1,0 +1,12 @@
+language: php
+php:
+  - '7.0'
+  - '7.1'
+  - '7.2'
+  - '7.3'
+
+before_script:
+  - composer install --no-dev --no-interaction
+
+script:
+  - phpunit -c phpunit.xml.dist
