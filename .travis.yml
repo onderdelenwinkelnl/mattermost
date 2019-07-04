@@ -9,4 +9,4 @@ before_script:
   - composer install --no-dev
 
 script:
-  - bin/phpunit -c test/config.xml
+  - phpunit -c test/config.xml
