@@ -59,7 +59,8 @@ You can find examples for every single API request in [examples](./examples)
 * [Get channel statistics](./examples/Channel/GetChannelStatistics.php)
 * [Get pinned posts from a channel](./examples/Channel/GetChannelsPinnedPosts.php)
 * [Get deleted channels](./examples/Channel/GetDeletedChannels.php)
-* [Find public channels by searchterm](./examples/Channel/AutocompleteChannels.php) _requires minimum Mattermost server version 4.7_
+* [Autocomplete public channels by searchterm](./examples/Channel/AutocompleteChannels.php) _requires minimum Mattermost server version 4.7_
+* [Autocomplete your channels by searchterm](./examples/Channel/AutocompleteChannelsForSearch.php) _requires minimum Mattermost server version 5.4_
 
 
 ##### Posts
