@@ -7,9 +7,9 @@
          convertWarningsToExceptions="true"
          processIsolation="false"
          stopOnFailure="false"
-         bootstrap="../vendor/autoload.php">
+         bootstrap="vendor/autoload.php">
     <testsuite name="Fiyo Mattermost Unit Test">
-        <directory suffix="Test.php">.</directory>
+        <directory suffix="Test.php">./test</directory>
     </testsuite>
-
+    <log type="coverage-php" target="build/cov/coverage.cov"/>
 </phpunit>
