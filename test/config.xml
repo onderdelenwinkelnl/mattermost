@@ -7,9 +7,9 @@
          convertWarningsToExceptions="true"
          processIsolation="false"
          stopOnFailure="false"
-         syntaxCheck="true"
          bootstrap="../vendor/autoload.php">
     <testsuite name="Fiyo Mattermost Unit Test">
-        <directory suffix="Test.php">./</directory>
+        <directory suffix="Test.php">.</directory>
     </testsuite>
+
 </phpunit>

@@ -2,3 +2,5 @@
 /vendor
 /index.php
 /json.json
+/test/*.cache
+/bin
