@@ -61,6 +61,7 @@ You can find examples for every single API request in [examples](./examples)
 * [Get deleted channels](./examples/Channel/GetDeletedChannels.php)
 * [Autocomplete public channels by searchterm](./examples/Channel/AutocompleteChannels.php) _requires minimum Mattermost server version 4.7_
 * [Autocomplete your channels by searchterm](./examples/Channel/AutocompleteChannelsForSearch.php) _requires minimum Mattermost server version 5.4_
+* [Search public channels](./examples/Channel/SearchChannels.php)
 
 
 ##### Posts
