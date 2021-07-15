@@ -1,7 +1,7 @@
 {
   "name": "fiyo/mattermost",
   "description":  "Php Wrapper to interact with Mattermost API https://api.mattermost.com/",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "type": "library",
   "keywords": [
     "mattermost"
@@ -16,7 +16,7 @@
     }
   ],
   "require": {
-    "php" : "^7.0 || ^7.1 || ^7.2 || ^7.3",
+    "php" : "^7.0 || ^7.1 || ^7.2 || ^7.3 || ^7.4 || ^8.0",
     "guzzlehttp/guzzle": "^6.3"
   },
   "require-dev": {
