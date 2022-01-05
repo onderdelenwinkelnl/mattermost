@@ -31,11 +31,6 @@ class Post extends AbstractTimedEntity
     /**
      * @var null|string
      */
-    protected $parentId;
-
-    /**
-     * @var null|string
-     */
     protected $originalId;
 
     /**
@@ -119,22 +114,6 @@ class Post extends AbstractTimedEntity
     public function setRootId(string $rootId)
     {
         $this->rootId = $rootId;
-    }
-
-    /**
-     * @return string|null
-     */
-    public function getParentId()
-    {
-        return $this->parentId;
-    }
-
-    /**
-     * @param string|null $parentId
-     */
-    public function setParentId(string $parentId)
-    {
-        $this->parentId = $parentId;
     }
 
     /**

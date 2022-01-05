@@ -15,7 +15,6 @@ class PostFactory extends AbstractTimedEntityFactory
     const FIELD_USER_ID = 'user_id';
     const FIELD_CHANNEL_ID = 'channel_id';
     const FIELD_ROOT_ID = 'root_id';
-    const FIELD_PARENT_ID = 'parent_id';
     const FIELD_ORIGINAL_ID = 'original_id';
     const FIELD_MESSAGE = 'message';
     const FIELD_TYPE = 'type';
@@ -36,7 +35,6 @@ class PostFactory extends AbstractTimedEntityFactory
         $post->setUserId($content->{self::FIELD_USER_ID});
         $post->setChannelId($content->{self::FIELD_CHANNEL_ID});
         $post->setRootId($content->{self::FIELD_ROOT_ID});
-        $post->setParentId($content->{self::FIELD_PARENT_ID});
         $post->setOriginalId($content->{self::FIELD_ORIGINAL_ID});
         $post->setMessage($content->{self::FIELD_MESSAGE});
         $post->setType($content->{self::FIELD_TYPE});
